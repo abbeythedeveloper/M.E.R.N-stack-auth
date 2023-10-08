@@ -3,16 +3,18 @@ const { hashPassword, comparePassword} = require('../helpers/auth');
 const { hash } = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const test = (req,res) =>{
-    res.json('test is working')
+const test = (req, res) => {
+    res.json('test is working ✅')
 }
-const registerUser = async (req,res) => {
+
+//register endpoint
+const registerUser = async (req, res) => {
     try {
         const {name, email, password} = req.body;
-         //check if name was entered
-         if(!name) {
+        //check if name was entered
+        if(!name) {
             return res.json({
-                error: 'Name is required❕😀'
+                error: 'Name is required❕'
         })
         };
         //check if password is good
@@ -72,20 +74,17 @@ const loginUser = async (req,res)=>{
         console.log(error)
     }
 }
-
 const getProfile = (req, res) => {
-    const {token} = req.cookies
-    if(token) {
-            jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
-                if(err) throw err;
-                res.json(user)
-            })
-        } else {
-            res.json(null);
-        }
+const {token} = req.cookies
+if(token) {
+        jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
+            if(err) throw err;
+            res.json(user)
+        })
+    } else {
+        res.json(null);
     }
-
-
+}
 
 
 module.exports = {
@@ -93,4 +92,4 @@ module.exports = {
     registerUser,
     loginUser,
     getProfile,
-}
+};
