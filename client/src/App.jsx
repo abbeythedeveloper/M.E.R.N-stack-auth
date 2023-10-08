@@ -13,7 +13,7 @@ import { UserContextProvider } from '../context/userContext'
 // import Profile from './pages/Profile'
 
 // axios.defaults.baseURL = 'https://auth-backend.vercel.app' //backend url when hosted
-axios.defaults.baseURL = 'http://localhost:8000'
+// axios.defaults.baseURL = 'http://localhost:8000'
 axios.defaults.withCredentials = true
 
  

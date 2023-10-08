@@ -16,8 +16,8 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.use(
     cors({
-        // origin:'https://https://auth-frontend.vercel.app' ,  //allow to access from this origin only
-        origin:'http://localhost:5173' ,  //allow to access from this origin only
+        origin:'https://auth-frontend-dusky.vercel.app/' ,  //allow to access from this origin only
+        // origin:'http://localhost:5173' ,  //allow to access from this origin only
         methods: 'GET,POST,PUT,DELETE',
         credentials: true
     })

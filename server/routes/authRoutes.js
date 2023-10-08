@@ -7,8 +7,8 @@ const { test, registerUser,loginUser, getProfile } = require('../controllers/aut
 router.use(
     cors({
         credentials: true,
-        // origin: 'https://auth-frontend.vercel.app' // <-- location of the react app were connecting to when deployed(frontend)
-        origin: 'http://localhost:5173' // <-- location of the react app were connecting to 
+        origin: 'https://auth-frontend-dusky.vercel.app/' // <-- location of the react app were connecting to when deployed(frontend)
+        // origin: 'http://localhost:5173' // <-- location of the react app were connecting to 
         })
 )
 
